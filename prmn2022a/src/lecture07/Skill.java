@@ -1,8 +1,8 @@
 package lecture07;
 
 public class Skill {
-    protected String name;
-    protected int power;
+    private String name;
+    private int power;
     public String getName(){
         return name;
     }
