@@ -1,23 +1,34 @@
 package lecture07;
 
+import lecture07.monster.Monkey;
+import lecture07.monster.Monster;
+import lecture07.monster.Penguin;
+import lecture07.monster.Turtle;
+
 import java.util.Map;
 import java.util.function.Supplier;
 
 public enum MonsterCreator {
-    MONKEY,PENGUIN,TURTLE;
-
+    Monkey(1,new Monkey()),
+    Penguin(2,new Penguin()),
+    Turtle(3,new Turtle());
 
     private int id;
-    private Supplier<Monster> supplier;
-
-    private Map<Integer,MonsterCreator> monsterCreatorMap;
-    public void viewMonsterList(){
-
+    public Supplier<Monster> supplier;
+    private static Map<Integer,MonsterCreator> monsterCreatorMap;
+    private MonsterCreator(int id,Monster monster){
+        this.id=id;
+        supplier=()->monster;
+    }
+    public static void viewMonsterList(){
+        for (MonsterCreator mons:MonsterCreator.values()){
+            System.out.println(mons+"->"+mons.supplier.get().getName());
+        }
     };
-    public int monsterMinId(){
+    public static int monsterMinId(){
         return 0;
     };
-    public int monsterMaxId(){
+    public static int monsterMaxId(){
         return 0;
     };
 }

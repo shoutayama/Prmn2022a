@@ -1,6 +1,10 @@
 package lecture07;
 
-public class Field implements IBattleMonster{
+import lecture07.battle.EnemyMonster;
+import lecture07.battle.IBattleMonster;
+import lecture07.battle.PlayerMonster;
+
+public class Field implements IBattleMonster {
     private IBattleMonster playerMonster;
     private IBattleMonster enemyMonster;
 
