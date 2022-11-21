@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         MonsterCreator.viewMonsterList();
         System.out.println(randomMonsterId());
-       // System.out.println(stdinMonsterId());
+        System.out.println(stdinMonsterId());
         PlayerMonster a=new PlayerMonster(MonsterCreator.Monkey.supplier.get());
         a.attack(5,MonsterCreator.Turtle.supplier.get());
 
